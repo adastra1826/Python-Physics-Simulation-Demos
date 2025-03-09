@@ -1,6 +1,6 @@
 import traceback
 import re
-from fixed import main
+from [script] import main
 
 
 if __name__ == "__main__":
