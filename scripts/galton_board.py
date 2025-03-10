@@ -20,15 +20,16 @@ BALL_RADIUS = 8
 # Pegs
 PEG_RADIUS = 6
 PEG_ELASTICITY = 1
-PEG_FRICTION = 1.0
+PEG_FRICTION = 0.0
 
+PEG_FIRST_ROW = 9
+PEG_ROWS = 15
 PEG_HORIZONTAL_SPACING = BALL_RADIUS * 4
 PEG_VERTICAL_SPACING = math.sqrt(3) * BALL_RADIUS * 2
-PEG_FIRST_ROW = 5
-PEG_ROWS = 15
 
 # Hopper
 HOPPER_HEIGHT = 150
+HOPPER_VERTICAL_OFFSET = -BALL_RADIUS
 HOPPER_OPENING = BALL_RADIUS * 5
 
 # Columns
@@ -88,11 +89,11 @@ class GaltonBoard:
         # Describe the hopper edges
         edges = [
             ((-WIDTH / 2, 0), (-HOPPER_OPENING / 2, HOPPER_HEIGHT)),
-            ((WIDTH / 2, 0), (HOPPER_OPENING / 2, HOPPER_HEIGHT)),
+            ((WIDTH / 2, 0), (HOPPER_OPENING / 2, HOPPER_HEIGHT + HOPPER_VERTICAL_OFFSET)),
             ((-WIDTH / 2, 0), (-WIDTH / 2, -HOPPER_HEIGHT)),
             ((WIDTH / 2, 0), (WIDTH / 2, -HOPPER_HEIGHT)),
             ((-HOPPER_OPENING / 2, HOPPER_HEIGHT), (-HOPPER_OPENING/ 2, HOPPER_HEIGHT + (BALL_RADIUS * 2))),
-            ((HOPPER_OPENING / 2, HOPPER_HEIGHT), (HOPPER_OPENING / 2, HOPPER_HEIGHT + (BALL_RADIUS * 2))),
+            ((HOPPER_OPENING / 2, HOPPER_HEIGHT + HOPPER_VERTICAL_OFFSET), (HOPPER_OPENING / 2, HOPPER_HEIGHT + (BALL_RADIUS * 2))),
         ]
         # Add the hopper edges to the space
         for a, b in edges:
