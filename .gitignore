@@ -3,4 +3,5 @@ pyvenv.cfg
 lib/
 bin/
 include/
+share/
 .gitignore
