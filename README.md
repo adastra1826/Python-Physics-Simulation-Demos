@@ -1,3 +1,3 @@
-This is really basic, just some Python scripts that simulate various physics interactions (at the moment using Pymunk).
+A repo consisting of simple Pymunk/Pygame physics simulations I have been working on to strengthen my Python and Pymunk abilities.
 
-You'll need to install at least Pygame and Pymunk to run these.
+Make sure you have the pygame and pymunk libraries installed to run these.
