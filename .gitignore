@@ -1,7 +1,5 @@
-bin/
-etc/
-include/
-lib/
+venv/*
+share/
 scripts/in_progress/
 share/
 pyvenv.cfg
