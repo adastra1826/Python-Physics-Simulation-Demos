@@ -1,0 +1,15 @@
+{
+  "rules": {    
+    "coding_style": {
+      "description": "Guidelines for maintaining consistent coding style.",
+      
+      "enabled": true,
+      
+      "rules": [
+        {
+          "description": "Comments should never be on the same line as code."
+        }
+      ]
+    }
+  }
+}

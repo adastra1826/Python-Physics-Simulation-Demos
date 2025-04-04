@@ -25,7 +25,7 @@ HALF_TABLE_LENGTH = int(TABLE_LENGTH / 2)
 BALL_RADIUS = int(BALL_RADIUS_RATIO * SCALE_FACTOR)
 KITCHEN = int(KITCHEN_RATIO * SCALE_FACTOR)
 FOOT_SPOT = int(FOOT_SPOT_RATIO * SCALE_FACTOR)
-POCKET_RADIUS = BALL_RADIUS * 1.5  # Slightly larger than ball radius
+POCKET_RADIUS = BALL_RADIUS * 1.5
 
 # Elasticity/friction/damping values
 SPACE_DAMPING = 0.56
@@ -83,7 +83,7 @@ class PoolSimulation:
             (HALF_TABLE_LENGTH, -HALF_TABLE_WIDTH),   # Top-right
             (HALF_TABLE_LENGTH, HALF_TABLE_WIDTH),    # Bottom-right
             (0, HALF_TABLE_WIDTH),                    # Bottom-middle
-            (-HALF_TABLE_LENGTH, HALF_TABLE_WIDTH)   # Bottom-left
+            (-HALF_TABLE_LENGTH, HALF_TABLE_WIDTH)    # Bottom-left
         ]
         for pos in pocket_positions:
             pocket_body = pymunk.Body(body_type=pymunk.Body.STATIC)
@@ -98,22 +98,17 @@ class PoolSimulation:
         # Create edges between pockets, leaving gaps for pocket entrances
         edges = []
         for i in range(len(pocket_positions)):
-            # Get current and next pocket positions
             current = pocket_positions[i]
-            next_pocket = pocket_positions[(i + 1) % len(pocket_positions)]            
-            # Calculate the angle between pockets
+            next_pocket = pocket_positions[(i + 1) % len(pocket_positions)]    
             angle = math.atan2(next_pocket[1] - current[1], next_pocket[0] - current[0])            
             # Calculate gap sizes for each end of the segment
             # Corner pockets are at indices 0, 2, 3, 5
             current_gap = POCKET_RADIUS * (2.0 if i in [0, 2, 3, 5] else 1.5)
-            next_gap = POCKET_RADIUS * (2.0 if (i + 1) % len(pocket_positions) in [0, 2, 3, 5] else 1.5)            
-            # Start point of edge (after current pocket gap)
+            next_gap = POCKET_RADIUS * (2.0 if (i + 1) % len(pocket_positions) in [0, 2, 3, 5] else 1.5)
             start_x = current[0] + math.cos(angle) * current_gap
-            start_y = current[1] + math.sin(angle) * current_gap            
-            # End point of edge (before next pocket gap)
+            start_y = current[1] + math.sin(angle) * current_gap
             end_x = next_pocket[0] - math.cos(angle) * next_gap
             end_y = next_pocket[1] - math.sin(angle) * next_gap
-            # Add the edge to the list of edges
             edges.append(((start_x, start_y), (end_x, end_y)))
         
         for a, b in edges:
@@ -156,12 +151,7 @@ class PoolSimulation:
         # Create and add the cue ball
         self.cue_ball_body, cue_ball_shape = self.create_ball()    
         cue_ball_shape.color = CUE_BALL_COLOR
-        max_x = int(((TABLE_LENGTH) * KITCHEN_RATIO) - HALF_TABLE_LENGTH)
-        self.cue_ball_body.position = (
-            random.randint(-HALF_TABLE_LENGTH + BALL_RADIUS, max_x),
-            random.randint(-HALF_TABLE_WIDTH + BALL_RADIUS, HALF_TABLE_WIDTH - BALL_RADIUS)
-        )
-        self.cue_ball_body.position = self.table_body.local_to_world(self.cue_ball_body.position)
+        self.cue_ball_body.position = (-10, -10)
         self.space.add(self.cue_ball_body, cue_ball_shape)
         
         # Find the relative coordinates for each object ball in its racked position
@@ -186,30 +176,25 @@ class PoolSimulation:
             ball_shape.color = BALL_COLOR
             self.space.add(ball_body, ball_shape)
             # Make special note of the first and last balls in the last row
-            # to ensure the cue ball is always aimed between them
             if ball == 11:
                 self.top_ball_body = ball_body
             elif ball == 15:
                 self.bottom_ball_body = ball_body
-            
+
     # Main simulation function
     def simulate(self):
         """Run the simulation."""
         self.create_table()
         self.add_balls()
 
-        # Determine shot angle and power randomly
-        # The shot always aims such that it will hit the racked balls
-        x, y = self.cue_ball_body.position
-        tx, ty = self.top_ball_body.position
-        bx, by = self.bottom_ball_body.position
-        top_range = math.atan2(ty - y, tx - x)
-        bottom_range = math.atan2(by - y, bx - x)        
-        aim_angle = random.uniform(top_range, bottom_range)        
-        shot_power = random.uniform(MIN_SHOT_POWER, MAX_SHOT_POWER)
-        # Apply the shot force
-        self.cue_ball_body.apply_impulse_at_local_point((shot_power * math.cos(aim_angle), shot_power * math.sin(aim_angle)))
-
+        # Variables for ball placement and aiming
+        placing_ball = True
+        aiming = False
+        drag_start = None
+        aim_angle = 0
+        shot_power = 0
+        max_power = MAX_SHOT_POWER
+        
         # Main simulation loop
         paused = False
         while True:
@@ -224,6 +209,43 @@ class PoolSimulation:
                         return False
                     elif event.key == pygame.K_r:
                         return True
+                elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                    if placing_ball:
+                        # Convert screen coordinates to world coordinates
+                        mouse_pos = self.table_body.world_to_local(event.pos)
+                        # Check if position is within kitchen area
+                        max_x = int(((TABLE_LENGTH) * KITCHEN_RATIO) - HALF_TABLE_LENGTH)
+                        if (-HALF_TABLE_LENGTH + BALL_RADIUS <= mouse_pos[0] <= max_x and
+                            -HALF_TABLE_WIDTH + BALL_RADIUS <= mouse_pos[1] <= HALF_TABLE_WIDTH - BALL_RADIUS):
+                            self.cue_ball_body.position = event.pos
+                            placing_ball = False
+                    elif not placing_ball:
+                        # Start aiming
+                        aiming = True
+                        drag_start = event.pos
+                elif event.type == pygame.MOUSEBUTTONUP and aiming:
+                    # Release shot
+                    aiming = False
+                    self.cue_ball_body.apply_impulse_at_local_point(
+                        (shot_power * math.cos(aim_angle), shot_power * math.sin(aim_angle))
+                    )
+                    drag_start = None
+                elif event.type == pygame.MOUSEMOTION:
+                    if aiming:
+                        # Calculate aim and power during drag
+                        current_pos = event.pos
+                        dx = drag_start[0] - current_pos[0]
+                        dy = drag_start[1] - current_pos[1]
+                        aim_angle = math.atan2(dy, dx)
+                        # Calculate power based on drag distance (scaled to max_power)
+                        drag_distance = math.sqrt(dx**2 + dy**2)
+                        shot_power = min(drag_distance * 15, MAX_SHOT_POWER)
+                    elif placing_ball:
+                        mouse_pos = self.table_body.world_to_local(event.pos)
+                        max_x = int(((TABLE_LENGTH) * KITCHEN_RATIO) - HALF_TABLE_LENGTH)
+                        if (-HALF_TABLE_LENGTH + BALL_RADIUS <= mouse_pos[0] <= max_x and
+                            -HALF_TABLE_WIDTH + BALL_RADIUS <= mouse_pos[1] <= HALF_TABLE_WIDTH - BALL_RADIUS):
+                                self.cue_ball_body.position = event.pos
 
             if not paused:
                 self.space.step(1 / FPS)
@@ -231,14 +253,30 @@ class PoolSimulation:
             # Draw the screen
             self.screen.fill(BACKGROUND_COLOR)
             self.space.debug_draw(self.draw_options)
+            
+            # Draw aiming line and power indicator
+            if aiming and drag_start:
+                cue_pos = self.cue_ball_body.position
+                line_length = shot_power / 4
+                end_x = cue_pos[0] + math.cos(aim_angle) * line_length
+                end_y = cue_pos[1] + math.sin(aim_angle) * line_length
+                pygame.draw.line(self.screen, (255, 0, 0), 
+                               (int(cue_pos[0]), int(cue_pos[1])),
+                               (int(end_x), int(end_y)), 2)
+            
+            # Display instructions and status
             font = pygame.font.Font(None, 30)
-            text = font.render(
-                f"Angle: {format(math.degrees(aim_angle), '.2f')}, "
-                f"Power: {format(shot_power, '.2f')}, "
-                f"Cue Position: [{int(self.cue_ball_body.position[0])}, {int(self.cue_ball_body.position[1])}], "
-                f"Pocketed: {self.pocketed_balls}",
-                True, (0, 0, 0)
-            )
+            if placing_ball:
+                status_text = "Click to place cue ball in kitchen area"
+            elif aiming:
+                status_text = f"Aiming - Power: {format(shot_power, '.2f')} ({format(shot_power/max_power*100, '.1f')}%)"
+            else:
+                status_text = (f"Angle: {format(math.degrees(aim_angle), '.2f')}, "
+                             f"Power: {format(shot_power, '.2f')}, "
+                             f"Cue Position: [{int(self.cue_ball_body.position[0])}, {int(self.cue_ball_body.position[1])}], "
+                             f"Pocketed: {self.pocketed_balls}")
+            
+            text = font.render(status_text, True, (0, 0, 0))
             self.screen.blit(text, (10, 10))
             pygame.display.flip()
             self.clock.tick(FPS)
