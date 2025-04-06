@@ -5,3 +5,4 @@ share/
 pyvenv.cfg
 .gitignore
 .DS_Store
+.cursorrules
