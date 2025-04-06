@@ -1,4 +1,4 @@
-venv/*
+venv/
 share/
 scripts/in_progress/
 share/
