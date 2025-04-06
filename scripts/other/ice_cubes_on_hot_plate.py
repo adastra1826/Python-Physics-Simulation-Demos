@@ -1,3 +1,14 @@
+"""
+Ice Cubes on Hot Plate Physics Simulation.
+
+This simulation models the thermodynamic behavior of ice cubes melting on a hot surface.
+It demonstrates principles of heat transfer, phase transitions, and how thermal
+energy flows through materials. The simulation shows how ice transitions from solid
+to liquid states as it absorbs heat from the plate, creating water droplets that
+move and interact. It visualizes thermal gradients, melting dynamics, and how
+the physical properties of water change with temperature.
+"""
+
 import pygame
 import pymunk
 import pymunk.pygame_util

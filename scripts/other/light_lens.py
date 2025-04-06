@@ -1,3 +1,16 @@
+"""
+Light and Lens Physics Simulation.
+
+This simulation models the behavior of light rays as they interact with optical lenses.
+It demonstrates principles of geometric optics, including refraction, focal points,
+and image formation. The simulation shows how different lens shapes (convex, concave)
+affect light paths according to Snell's Law, how parallel rays converge or diverge
+based on lens properties, and how the index of refraction influences the bending
+of light. Users can visualize the fundamental optical principles that explain how
+lenses in cameras, eyeglasses, telescopes, and microscopes manipulate light to form
+images or correct vision.
+"""
+
 import pygame
 import math
 import pygame.freetype

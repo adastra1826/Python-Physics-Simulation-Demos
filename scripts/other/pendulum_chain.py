@@ -1,3 +1,16 @@
+"""
+Pendulum Chain Physics Simulation.
+
+This simulation models a chain of connected pendulums, where each pendulum
+is attached to the end of the previous one. It demonstrates principles of
+coupled oscillators, energy transfer through a connected system, and how
+initial conditions create complex motion patterns. The simulation shows
+how energy propagates through the chain, creating fascinating wave-like motions
+and chaotic behavior that emerges from simple physical rules. Each pendulum
+affects and is affected by its neighbors, illustrating concepts of resonance,
+energy conservation, and the complexity that arises in multi-body systems.
+"""
+
 import pygame
 import math
 import sys

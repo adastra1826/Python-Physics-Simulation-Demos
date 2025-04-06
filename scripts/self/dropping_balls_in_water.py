@@ -1,3 +1,14 @@
+"""
+Dropping Balls in Water Physics Simulation.
+
+This simulation models the behavior of balls dropped into a water-like fluid.
+It demonstrates principles of buoyancy, fluid resistance, and how objects with
+different densities interact with fluids. The simulation shows how objects
+sink or float based on their properties, how fluid drag affects their motion,
+and how multiple objects interact within a fluid medium. The physics demonstrates
+Archimedes' principle and basic fluid dynamics concepts.
+"""
+
 import pygame
 import pymunk
 import pymunk.pygame_util

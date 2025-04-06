@@ -1,3 +1,15 @@
+"""
+Balloon Physics Simulation.
+
+This simulation models the behavior of a hot air balloon in a variable atmosphere.
+It demonstrates principles of buoyancy, air resistance, thermodynamics, and how
+changing temperature affects lift. The simulation accounts for how heating the air
+inside the balloon decreases its density, creating buoyant force according to
+Archimedes' principle. Users can experience how controlling the balloon's internal
+temperature affects its vertical motion, and how external factors like wind and
+atmospheric conditions influence flight dynamics.
+"""
+
 import pygame
 import random
 import math

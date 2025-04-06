@@ -1,3 +1,13 @@
+"""
+Swinging Pendulum Physics Simulation.
+
+This simulation models a pendulum that swings in a 2D plane under gravity.
+Users can draw rectangular groups of boxes that will interact with the
+pendulum, demonstrating momentum transfer, collision physics, and gravity.
+The pendulum behaves according to real-world physics principles, with
+elastic collisions and friction affecting the motion of objects.
+"""
+
 import pymunk
 import pymunk.pygame_util
 import pygame

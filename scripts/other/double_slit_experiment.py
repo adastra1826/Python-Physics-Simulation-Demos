@@ -1,3 +1,15 @@
+"""
+Double Slit Experiment Physics Simulation.
+
+This simulation models the famous double-slit experiment, a cornerstone of quantum mechanics.
+It demonstrates the wave-particle duality of light and matter, showing how particles
+passing through two slits create an interference pattern characteristic of waves.
+The simulation visualizes wave interference, diffraction patterns, and probabilistic
+particle behavior. It illustrates one of the most profound quantum phenomena that
+reveals the fundamental wavelike nature of quantum objects and the probabilistic
+nature of quantum mechanics.
+"""
+
 import pygame
 import numpy as np
 
@@ -10,7 +22,7 @@ BLACK = (0, 0, 0)
 
 def create_hot_colormap():
     """
-    Create a “hot” colormap (256x3) where low intensity is black and high intensity transitions
+    Create a "hot" colormap (256x3) where low intensity is black and high intensity transitions
     from red to yellow to white.
     """
     colormap = np.zeros((256, 3), dtype=np.uint8)

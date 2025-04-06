@@ -1,3 +1,16 @@
+"""
+Water Ripples Physics Simulation.
+
+This simulation models the formation and propagation of ripples on a water surface.
+It demonstrates principles of wave physics including wave propagation, reflection,
+interference, and damping effects. The simulation shows how localized disturbances
+generate circular waves that expand outward, how these waves interact with boundaries
+and with each other, creating complex interference patterns. By using a discretized
+wave equation, it visualizes the transfer of energy through the water medium as
+waves travel, diminish due to viscous forces, and combine constructively or
+destructively when multiple waves overlap.
+"""
+
 from vpython import *
 import numpy as np
 

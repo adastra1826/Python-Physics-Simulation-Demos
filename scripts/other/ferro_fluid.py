@@ -1,3 +1,16 @@
+"""
+Ferrofluid Physics Simulation.
+
+This simulation models the behavior of ferrofluid - a liquid that becomes
+strongly magnetized in the presence of magnetic fields. It demonstrates
+principles of magnetism, fluid dynamics, and how magnetic particles suspended
+in a carrier fluid respond to external magnetic fields. The simulation shows
+how ferrofluids form characteristic spikes when exposed to magnets (due to
+the interplay between magnetic attraction, surface tension, and gravity),
+how they flow while maintaining their magnetic properties, and how they can
+be manipulated by changing magnetic field configurations.
+"""
+
 import pygame
 import numpy as np
 

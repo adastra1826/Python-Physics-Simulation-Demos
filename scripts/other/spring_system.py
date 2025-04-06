@@ -1,3 +1,17 @@
+"""
+Spring System Physics Simulation.
+
+This simulation models the behavior of interconnected spring-mass systems.
+It demonstrates principles of oscillatory motion, Hooke's Law, harmonic and
+anharmonic oscillations, and how energy transfers through coupled oscillators.
+The simulation shows how springs store and release potential energy, how damping
+affects motion decay, and how complex behaviors emerge when multiple springs
+interact. It visualizes concepts like resonance, natural frequency, and how
+initial conditions and interconnectedness affect the evolution of the system -
+principles that are fundamental to understanding mechanical vibrations in
+engineering systems and natural phenomena.
+"""
+
 import pygame
 import pymunk
 import pymunk.pygame_util

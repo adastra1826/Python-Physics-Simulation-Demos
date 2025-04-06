@@ -1,3 +1,14 @@
+"""
+Rain Drops on Puddle Physics Simulation.
+
+This simulation models raindrops falling onto a water surface and the resulting
+ripple effects. It demonstrates principles of fluid dynamics, wave propagation,
+and interference patterns. As raindrops hit the water surface, they create
+concentric waves that expand outward, interact with each other, and reflect
+off boundaries. The simulation showcases how multiple wave sources create
+complex interference patterns and how energy is transferred through a fluid medium.
+"""
+
 import pygame
 import pymunk
 import pymunk.pygame_util

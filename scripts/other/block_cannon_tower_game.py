@@ -1,3 +1,14 @@
+"""
+Block Cannon Tower Game Physics Simulation.
+
+This simulation models a game where a cannon fires projectiles at block towers.
+It demonstrates principles of projectile motion, momentum transfer during collisions,
+and structural stability. The simulation shows how structures respond to impacts,
+how energy propagates through connected objects, and the physics of destruction
+as towers collapse under varying impact conditions. It combines ballistics with
+structural engineering concepts in an interactive gaming environment.
+"""
+
 import pygame
 import pymunk
 import pymunk.pygame_util

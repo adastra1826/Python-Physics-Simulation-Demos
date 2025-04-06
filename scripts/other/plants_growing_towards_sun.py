@@ -1,3 +1,14 @@
+"""
+Plants Growing Towards Sun Physics Simulation.
+
+This simulation models the growth behavior of plants as they respond to light
+stimuli (phototropism). It demonstrates how plants bend and grow toward light
+sources, optimizing their exposure to sunlight for photosynthesis. The simulation
+incorporates principles of structural growth, differential cell elongation,
+and biomechanical responses to environmental stimuli. It showcases how simple
+biological rules can lead to complex adaptive growth patterns in plant structures.
+"""
+
 import pygame
 import random
 import math

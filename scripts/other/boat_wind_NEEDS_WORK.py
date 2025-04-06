@@ -1,3 +1,16 @@
+"""
+Boat and Wind Physics Simulation (Under Development).
+
+This simulation attempts to model the interactions between a sailboat and wind.
+It demonstrates principles of fluid dynamics, sail aerodynamics, and how forces
+like thrust and drag affect watercraft motion. While marked as needing work,
+the simulation aims to show how wind direction and strength influence sail
+efficiency, how the boat's orientation relative to wind affects its speed and
+movement direction, and the complex balance between wind power, water resistance,
+and steering forces. Note that this implementation may have limitations or
+inaccuracies in its current state.
+"""
+
 import pygame
 import sys
 import math

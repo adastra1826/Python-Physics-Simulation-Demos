@@ -1,3 +1,17 @@
+"""
+Ball, Ramp, and Boxes Physics Simulation.
+
+This simulation models the interactions between balls rolling down ramps and
+colliding with stacked boxes. It demonstrates principles of potential and
+kinetic energy conversion, conservation of momentum, collision dynamics, and
+structural stability. The simulation shows how gravitational potential energy
+converts to kinetic energy as balls descend ramps, how this energy transfers
+to boxes during collisions, and how boxes respond based on their arrangement
+and physical properties. It visualizes concepts like energy transfer chains,
+how initial conditions affect outcomes, and the physics of structural collapse
+when forces exceed stability thresholds.
+"""
+
 import sys
 import pymunk
 import pymunk.pygame_util

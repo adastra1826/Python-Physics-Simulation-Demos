@@ -1,4 +1,14 @@
-"""Acoustic wave propagation simulation in a 2D room with obstacles."""
+"""
+Sound and Pressure Wave Physics Simulation.
+
+This simulation models the propagation of sound and pressure waves through a medium.
+It demonstrates principles of wave mechanics, including wave propagation, interference,
+reflection, and diffraction. The simulation visualizes how sound waves travel through
+space as longitudinal pressure waves, how they interact with obstacles and boundaries,
+and how multiple waves combine through constructive and destructive interference.
+It helps visualize the invisible pressure fluctuations that constitute sound waves
+in a way that makes wave mechanics intuitive and observable.
+"""
 
 import numpy as np
 import matplotlib.pyplot as plt

@@ -1,3 +1,16 @@
+"""
+Balls Bouncing on Stairs Physics Simulation.
+
+This simulation models the dynamics of balls bouncing down a staircase.
+It demonstrates principles of gravity, elastic collisions, momentum conservation,
+and energy transfer as balls interact with an irregular surface. The simulation
+shows how the discrete nature of stairs creates complex bouncing patterns
+that differ from smooth inclines, with each impact changing the ball's trajectory
+in ways that can lead to chaotic or unexpected behaviors. The physics includes
+detailed collision response, energy loss through impacts, and the influence of
+initial conditions on the overall descent pattern.
+"""
+
 import pygame
 import pymunk
 import pymunk.pygame_util

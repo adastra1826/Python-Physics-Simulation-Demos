@@ -1,3 +1,14 @@
+"""
+Balancing Stick Physics Simulation.
+
+This simulation attempts to model an inverted pendulum (balancing stick)
+system, which demonstrates principles of unstable equilibrium and control
+systems. The simulation shows how small perturbations can cause the system
+to become unstable, requiring constant adjustments to maintain balance.
+Note: This implementation is marked as "BAD" as it may have issues with 
+the physics implementation or control algorithm that affect its stability.
+"""
+
 import pymunk
 import pymunk.pygame_util
 import pygame

@@ -1,3 +1,16 @@
+"""
+Obstructed Fluid Flow Physics Simulation.
+
+This simulation models the flow of fluid (liquid or gas) around obstacles in a channel.
+It demonstrates principles of fluid dynamics including laminar and turbulent flow,
+boundary layer formation, and how obstacles create disturbances in flow patterns.
+The simulation shows how fluid particles navigate around obstructions, how vortices
+form in certain flow conditions, and how the shape and arrangement of obstacles
+affect the overall flow characteristics. It visualizes concepts like flow separation,
+wake formation, and how pressure differences develop around objects in flowing fluids,
+which are fundamental to understanding aerodynamics and hydrodynamics.
+"""
+
 import pygame
 import numpy as np
 import random

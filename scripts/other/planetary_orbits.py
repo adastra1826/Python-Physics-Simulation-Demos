@@ -1,3 +1,14 @@
+"""
+Planetary Orbits Physics Simulation.
+
+This simulation models the orbital mechanics of planets around a central star,
+based on Newtonian gravitational physics. It demonstrates principles of elliptical
+orbits, conservation of angular momentum, and how gravitational forces maintain
+planetary systems. The simulation shows how different initial conditions affect
+orbital characteristics, how multi-body systems evolve over time, and the stable
+configurations that can emerge from gravitational interactions in space.
+"""
+
 import pygame
 import math
 from scipy import integrate

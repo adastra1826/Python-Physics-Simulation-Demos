@@ -1,3 +1,15 @@
+"""
+Pool Table Physics Simulation.
+
+This simulation models the physics of billiards/pool on a standard table.
+It demonstrates principles of elastic collisions, conservation of momentum,
+friction, and angular momentum as balls interact with each other and the table.
+Users can control the cue ball with varying force and direction, experiencing
+how initial conditions affect the entire system's evolution. The simulation
+accurately models the characteristic behavior of pool balls, including how they
+slow down due to rolling and sliding friction, and how they bounce off cushions.
+"""
+
 import pygame
 import math
 import random

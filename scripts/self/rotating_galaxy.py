@@ -1,3 +1,14 @@
+"""
+Rotating Galaxy Physics Simulation.
+
+This simulation models a simplified version of galactic rotation, where
+stars orbit around a central gravitational mass (representing a galactic core).
+The simulation demonstrates orbital dynamics, gravitational attraction,
+and the differential rotation of stellar objects at varying distances from 
+the galactic center. Stars closer to the center orbit faster than those 
+further away, creating the characteristic spiral arm patterns seen in galaxies.
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider

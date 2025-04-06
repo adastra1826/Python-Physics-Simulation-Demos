@@ -1,3 +1,14 @@
+"""
+Ball in Magnetic Maze Physics Simulation.
+
+This simulation models a ball navigating through a maze under the influence of
+magnetic-like forces. The ball is attracted or repelled by various magnetic fields,
+demonstrating principles of electromagnetic forces, field interactions, and how
+objects respond to non-contact forces. The simulation showcases concepts of
+potential energy wells, force fields, and the delicate balance required to navigate
+through a complex environment with competing force influences.
+"""
+
 import pygame
 import pymunk
 import pygame_gui

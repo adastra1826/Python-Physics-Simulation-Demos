@@ -1,3 +1,9 @@
+"""
+Template file for physics simulations using PyMunk and PyGame. 
+This provides a basic framework for creating interactive physics simulations
+with a standard initialization, event loop, and render cycle.
+"""
+
 import pymunk
 import pymunk.pygame_util
 import pygame

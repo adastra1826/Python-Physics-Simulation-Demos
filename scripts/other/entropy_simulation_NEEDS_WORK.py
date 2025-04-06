@@ -1,3 +1,17 @@
+"""
+Entropy Physics Simulation (Under Development).
+
+This simulation attempts to model entropy increase in physical systems.
+It demonstrates principles of statistical mechanics and the second law of 
+thermodynamics - that isolated systems spontaneously evolve toward states of
+higher entropy. While marked as needing work, the simulation aims to show how
+ordered systems naturally progress toward disorder, how microscopic randomness
+leads to macroscopic predictability, and how irreversible processes emerge
+from reversible microscopic physics. Note that this implementation may have
+limitations or simplifications in its current state that affect its accuracy
+or comprehensiveness.
+"""
+
 import pygame
 import numpy as np
 import random

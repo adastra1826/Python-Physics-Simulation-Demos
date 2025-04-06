@@ -1,3 +1,14 @@
+"""
+Wrecking Ball Physics Simulation.
+
+This simulation models a wrecking ball demolishing structures. The wrecking ball
+is attached to a crane by a constraint that allows it to swing in an arc.
+When the ball collides with structures, it transfers its momentum, demonstrating
+principles of kinetic energy, destructive force, and structural collapse.
+Users can create their own structures that will be demolished by the wrecking ball,
+showcasing principles of structural integrity and force distribution.
+"""
+
 import pygame
 import pymunk
 import pymunk.pygame_util

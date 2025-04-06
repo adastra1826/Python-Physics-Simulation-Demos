@@ -1,3 +1,15 @@
+"""
+Rocket Landing Physics Simulation.
+
+This simulation models the dynamics of a rocket attempting to land vertically
+on a designated landing pad. It demonstrates principles of rocket propulsion,
+momentum conservation, gravity, and control systems. The simulation incorporates
+realistic physics including changing mass as fuel is consumed, thrust vectoring
+for attitude control, aerodynamic forces, and the challenge of balancing these
+factors to achieve a soft landing. Users can experience the delicate balance 
+required in rocket landings similar to those performed by modern reusable rockets.
+"""
+
 import pygame
 from pygame.locals import *
 import numpy as np

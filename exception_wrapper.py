@@ -1,3 +1,9 @@
+"""
+Exception wrapper utility for running physics simulations.
+This wrapper catches exceptions and formats stack traces to remove full
+file paths, making error messages cleaner and more readable.
+"""
+
 import traceback
 import re
 from template import main

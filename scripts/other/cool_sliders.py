@@ -1,3 +1,14 @@
+"""
+Interactive Physics Sliders Simulation.
+
+This simulation provides an interactive interface with sliders to control
+various physical parameters in real-time. It demonstrates how changing physical
+constants affects the behavior of simulated objects, helping visualize the
+relationships between parameters like gravity, friction, elasticity, and mass.
+The simulation serves as an educational tool for exploring how adjusting these
+parameters influences physical interactions in a controlled environment.
+"""
+
 import pygame
 import pymunk
 import pymunk.pygame_util

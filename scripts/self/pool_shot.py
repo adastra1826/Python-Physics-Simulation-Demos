@@ -1,3 +1,14 @@
+"""
+Pool Shot Physics Simulation.
+
+This simulation models a billiards/pool break shot with realistic physics.
+It simulates momentum transfer, collision elasticity, and friction between
+balls on a pool table. A cue ball is randomly positioned in the kitchen area
+and takes a random-power shot aimed between specific balls in the rack.
+The simulation demonstrates principles of conservation of momentum, elastic
+collisions, and how friction gradually reduces ball movement.
+"""
+
 import pymunk
 import pymunk.pygame_util
 import pygame

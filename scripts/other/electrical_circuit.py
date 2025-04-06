@@ -1,3 +1,16 @@
+"""
+Electrical Circuit Physics Simulation.
+
+This simulation models the behavior of electric current flowing through circuit components.
+It demonstrates principles of electrical physics including Ohm's Law, Kirchhoff's Laws,
+and how components like resistors, capacitors, and inductors affect current flow.
+The simulation shows how electrical potential drives electrons through conductors,
+how different circuit configurations (series, parallel) distribute current and voltage,
+and how time-varying components create dynamic circuit behaviors. Users can visualize
+invisible electrical phenomena and understand the underlying physics that powers
+modern electronic devices.
+"""
+
 import pygame
 
 # Window size

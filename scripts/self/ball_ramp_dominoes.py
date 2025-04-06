@@ -1,3 +1,13 @@
+"""
+Ball Ramp and Dominoes Physics Simulation.
+
+This simulation models a chain reaction system where a ball rolls down a ramp
+and collides with a series of domino-like objects, causing them to topple in sequence.
+The simulation demonstrates principles of potential energy, kinetic energy conversion,
+momentum transfer through collisions, and how a small initial force can create
+a cascading effect through a system. It showcases gravity, friction, and the
+conservation of energy in a complex, multi-step interaction.
+"""
 
 import pymunk
 import pymunk.pygame_util

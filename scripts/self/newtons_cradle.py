@@ -1,3 +1,14 @@
+"""
+Newton's Cradle Physics Simulation.
+
+This simulation models Newton's Cradle, a classic physics demonstration
+of conservation of momentum and energy. A series of suspended pendulum balls
+are arranged in a row, and when one or more balls on one end are lifted and
+released, they transfer momentum through the stationary balls, causing an
+equal number of balls on the opposite end to swing outward. The simulation
+demonstrates conservation of momentum, energy transfer, and elastic collisions.
+"""
+
 import pymunk
 import pymunk.pygame_util
 import pygame

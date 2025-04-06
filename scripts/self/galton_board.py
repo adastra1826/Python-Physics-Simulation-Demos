@@ -1,3 +1,14 @@
+"""
+Galton Board Physics Simulation.
+
+This simulation models a Galton Board (also known as a bean machine or quincunx),
+which is a device that demonstrates binomial probability distribution through
+physical means. Balls drop from a hopper at the top, bounce off pegs arranged
+in rows, and collect in columns at the bottom, forming a bell-shaped distribution.
+The simulation demonstrates principles of probability, random walks, and how
+small random deviations accumulate to create predictable statistical patterns.
+"""
+
 import pymunk
 import pymunk.pygame_util
 import pygame

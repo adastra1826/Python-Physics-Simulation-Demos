@@ -1,3 +1,17 @@
+"""
+Charged Particle in Voltage Field Physics Simulation.
+
+This simulation models the movement of charged particles in electric fields.
+It demonstrates principles of electrostatics and charged particle dynamics,
+including how electric forces accelerate particles according to Coulomb's Law.
+The simulation shows how charged particles respond to voltage gradients,
+following electric field lines from high to low potential (or vice versa,
+depending on charge sign). It visualizes concepts like electric potential energy,
+field line mapping, and how charged particles can be manipulated through
+carefully designed electric fields - principles that underlie technologies like
+cathode ray tubes, mass spectrometers, and particle accelerators.
+"""
+
 import pygame
 import numpy as np
 import matplotlib.pyplot as plt

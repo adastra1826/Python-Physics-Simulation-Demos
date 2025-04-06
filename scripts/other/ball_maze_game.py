@@ -6,6 +6,16 @@ import Box2D  # Import Box2D physics engine
 from Box2D import b2World, b2PolygonShape, b2CircleShape, b2EdgeShape, b2_staticBody, b2_dynamicBody, b2Vec2
 
 """
+Ball Maze Game Physics Simulation.
+
+This simulation models a maze game where a ball must navigate through obstacles
+using realistic physics. It demonstrates principles of momentum, inertia, collision
+dynamics, and user-controlled physics interactions. As users tilt the maze to guide
+the ball, they experience how gravity affects object motion, how momentum carries
+objects beyond intended paths, and how surface properties like friction influence
+movement. The simulation combines game mechanics with accurate physics behavior to
+create an engaging interactive experience.
+
 Marble Maze Game
 
 A physics-based maze game where players tilt the maze to guide a marble to the goal.

@@ -1,3 +1,14 @@
+"""
+Ball and Chain Physics Simulation.
+
+This simulation models a ball connected to a fixed point by a chain-like
+constraint (implemented as a pin joint). The ball swings under the influence
+of gravity, demonstrating pendulum motion, momentum conservation, and
+how constraints affect the motion of objects. The simulation allows users
+to interact with the ball by applying impulses, demonstrating how external
+forces affect constrained systems.
+"""
+
 import pymunk
 import pymunk.pygame_util
 import pygame

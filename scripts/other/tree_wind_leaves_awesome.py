@@ -1,4 +1,15 @@
 """
+Tree with Wind and Leaves Physics Simulation.
+
+This simulation models the dynamics of a tree interacting with wind, including 
+branch movements and leaf behaviors. It demonstrates principles of structural 
+mechanics, fluid dynamics, and how forces propagate through connected systems.
+The simulation shows how branches bend and sway under varying wind conditions,
+how leaves are affected by both the wind directly and the movement of branches,
+and how these complex interactions create the characteristic rustling and 
+swaying patterns observed in real trees. The physics includes spring dynamics,
+damping effects, and the interconnected nature of the tree's structure.
+
 Autumn Tree Simulation - A calming physics-based visualization
 
 This simulation creates a peaceful autumn scene with a procedurally generated tree

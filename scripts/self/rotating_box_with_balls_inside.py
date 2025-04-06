@@ -1,3 +1,14 @@
+"""
+Rotating Box with Balls Inside Physics Simulation.
+
+This simulation models the behavior of multiple balls contained within a rotating box.
+As the box rotates, the balls collide with each other and the box walls, demonstrating
+principles of centrifugal force, collisions in non-inertial reference frames, and
+energy transfer. The simulation shows how objects behave under rotation, how energy
+is distributed throughout a closed system, and how rotational motion affects the
+movement patterns of contained objects.
+"""
+
 import pymunk
 import pymunk.pygame_util
 import pygame

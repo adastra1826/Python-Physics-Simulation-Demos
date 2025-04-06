@@ -1,3 +1,15 @@
+"""
+Gas Particles in Chamber Physics Simulation.
+
+This simulation models the behavior of gas particles confined within a chamber,
+demonstrating principles of kinetic theory of gases. It shows how individual
+gas molecules move randomly, collide with each other and chamber walls, and
+collectively exhibit properties like pressure and temperature. The simulation
+illustrates Brownian motion, elastic collisions, energy distribution among
+particles, and how microscopic particle behaviors lead to macroscopic gas
+properties as described by the ideal gas law.
+"""
+
 import pymunk
 import pygame
 import math
@@ -9,7 +21,7 @@ WIDTH, HEIGHT = 800, 600
 # Chamber dimensions
 CHAMBER_WIDTH, CHAMBER_HEIGHT = 400, 400
 
-# Piston dimensions (match chamber height so there’s no gap)
+# Piston dimensions (match chamber height so there's no gap)
 PISTON_WIDTH = 50
 PISTON_HEIGHT = CHAMBER_HEIGHT
 
@@ -94,7 +106,7 @@ def main():
         vy = random.uniform(-50, 50)
         particles.append(Particle(space, x, y, vx, vy))
 
-    # Piston movement: track the piston’s LEFT edge.
+    # Piston movement: track the piston's LEFT edge.
     # It oscillates between piston_min_edge (when the piston is 3/4 in)
     # and piston_max_edge (when the piston is fully outside the chamber).
     piston_speed = 50.0

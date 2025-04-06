@@ -1,3 +1,16 @@
+"""
+Objects in Space Physics Simulation.
+
+This simulation models the motion of celestial bodies under the influence of gravity.
+It demonstrates principles of orbital mechanics, including how objects follow paths
+determined by gravitational forces according to Newton's laws. The simulation shows
+how multiple bodies interact gravitationally, creating complex orbital patterns,
+stable systems, or chaotic trajectories depending on initial conditions and mass
+distributions. It visualizes concepts like orbital velocity, escape velocity,
+gravitational slingshots, and how conservation of angular momentum governs the
+movement of objects in space.
+"""
+
 import pygame
 import pygame_gui
 from pygame.locals import QUIT
