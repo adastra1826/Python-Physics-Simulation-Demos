@@ -3,6 +3,5 @@ share/
 scripts/in_progress/
 share/
 pyvenv.cfg
-.gitignore
 .DS_Store
 .cursorrules
