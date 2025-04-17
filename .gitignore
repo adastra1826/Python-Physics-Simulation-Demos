@@ -5,3 +5,4 @@ share/
 pyvenv.cfg
 .DS_Store
 .cursorrules
+.cursor
