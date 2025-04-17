@@ -6,3 +6,4 @@ pyvenv.cfg
 .DS_Store
 .cursorrules
 .cursor
+.old_cr
