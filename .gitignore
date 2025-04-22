@@ -1,6 +1,7 @@
 venv/
 share/
 scripts/in_progress/
+scripts/grading
 share/
 pyvenv.cfg
 .DS_Store
